@@ -9,6 +9,8 @@ namespace Chatta
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            //Register the hub route
+            app.MapSignalR();
         }
     }
 }

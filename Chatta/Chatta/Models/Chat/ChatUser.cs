@@ -7,7 +7,7 @@ namespace Chatta.Models.Chat
 {
     public class ChatUser
     {
-        public string Username { get; set; }
         public string ConnectionID { get; set; }
+        public string Username { get; set; }
     }
 }

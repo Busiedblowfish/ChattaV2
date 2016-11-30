@@ -27,7 +27,12 @@ namespace Chatta.Models.Chat
             mappings = new Dictionary<string, string>();
         }
 
-        public IQueryable<ChatUser> Users { get { return connectedUsers.AsQueryable(); } }
+        public IQueryable<ChatUser> Users
+        {
+            get {
+                    return connectedUsers.AsQueryable();
+                }
+        }
 
         public void Add(ChatUser user)
         {
@@ -42,7 +47,7 @@ namespace Chatta.Models.Chat
         #region Generate a random number and append to usernames if already taken
         public string AppendRandToUsername(string newUser)
         {
-            string tempUsername = newUser;
+            string randUsername = newUser;
             int newRandom = maxRandom;
             int oldRandom = 0;
             int counter = 0;
@@ -55,7 +60,7 @@ namespace Chatta.Models.Chat
                     oldRandom = newRandom;
                     newRandom *= 2;
                 }
-                newUser = tempUsername + random.Next(oldRandom, newRandom).ToString();
+                newUser = randUsername + "@" + random.Next(oldRandom, newRandom).ToString();
                 counter++;
             } while (GetInstance().Users.Where(u => u.Username.Equals(newUser)).ToList().Count > 0);
 

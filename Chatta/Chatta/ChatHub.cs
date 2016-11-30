@@ -60,7 +60,7 @@ namespace Chatta
         /// <summary>
         /// Fired when a client send a message to the server.
         /// </summary>
-        /// <param name="message"></param>
+        /// <param name="Content"></param>
         public void Send(ChatMessage Content)
         {
             if (!string.IsNullOrEmpty(Content.Message))
@@ -89,7 +89,7 @@ namespace Chatta
             //Map each Username to their ConnectionId
             container.Add(user);
             container.AddMapping(Context.ConnectionId, user.ConnectionID);
-            Clients.All.joins(user.Username, user.ConnectionID, DateTime.Now);
+            Clients.All.joins(user.ConnectionID, user.Username, DateTime.Now);
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Chatta
         public ICollection<ChatUser> GetConnectedUsers()
         {
             //Retrieve the list of connected users
-            return container.Users.ToList();
+            return container.Users.ToList<ChatUser>();
         }
         #endregion
     }

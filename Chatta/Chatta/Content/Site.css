@@ -67,4 +67,170 @@ button
 	font-family: museo-sans-rounded;
 }
 
-/*  */
+/*Chat room look and styling*/
+#whole-box
+{
+  width:96%; 
+  height:70%;
+  margin:auto; 
+  overflow: auto;
+}
+
+.groupChat-box
+{
+    float:left;
+    width:75%;
+    height:600px;
+    position:relative;
+    clear:both;
+}
+
+#whole-box-header
+{
+    margin-top:70px;
+    width:96%; 
+    height:40px;
+    margin:auto; 
+    position:relative;
+}
+
+.groupchat-header
+{
+    float:left;
+    height:inherit;
+    width:75%;  
+    border:groove;
+}
+
+.userbox-header
+{
+    border-style: groove;
+    border-color: inherit;
+    border-width: medium;
+    float:right;
+    height:40px;
+    width:25%;
+}
+
+.lower-left
+{
+    border-style: groove;
+    border-color: inherit;
+    border-width: medium;
+    margin: auto;
+    position:relative;
+    height:20%;
+    top: 0px;
+    left: 0px;
+}
+
+.msg-box
+{
+    height:100%;
+    width:80%;
+    float:left;
+}
+
+.send-box
+{
+    height:100%;
+    width:20%;
+    float:right;
+}
+
+#Textbox1
+{
+  font-family:Candara, Verdana;
+  font-size:x-large;
+  resize:none;
+  height:100%;
+  width:100%;
+}
+
+/*User listing and display*/
+#user-box
+{
+    width:auto;
+    height:600px;
+    border:groove;
+    overflow:auto;
+}
+
+ul.user-list
+{
+	list-style: none;
+    list-style-position: inside;
+
+}
+
+li.user-list
+{
+    display:inline-block;
+	border-bottom: 1px solid #F2F2F2;
+    overflow:auto;
+    padding:20px;
+    background-color:#33b6b1
+
+}	
+
+/*Chat box*/
+
+#chat-box
+{
+    margin:auto;
+    height:80%;
+    width:100%;
+    border:groove;
+    overflow: auto;
+}
+
+/*Chat property*/
+
+#chat-box ul
+ {
+	list-style: none;
+    list-style-position: inside;
+    margin-left:0px;			
+}
+
+#chat-box ul li 
+{
+	display:block;
+	border-bottom: 1px solid #F2F2F2;
+	width:100%;
+	height:100%;
+}
+.chat-property-email 
+{
+    display:inline-block;
+    float:left;
+    width: 20%;
+    padding:20px;    
+    background-color:#009690;    
+}
+
+.chat-property-message 
+{   
+    border-style: dotted;
+    border-color: inherit;
+    border-width: medium;
+    float:left;
+    width: 70%;
+    padding: 20px;    
+    /*word-wrap: break-word;*/
+    display:inline-block;
+    height: 0px;
+}
+
+.chat-property-timestamp 
+{   
+    width: 10%;
+    float:left;
+    position: absolute;
+    text-align: center;
+    font-weight:lighter;    
+    padding: 20px;    
+    background-color: #FF9966;
+    color: black;
+    display:inline-block;
+}

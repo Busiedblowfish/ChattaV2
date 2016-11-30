@@ -18,13 +18,13 @@ namespace Chatta.Controllers
 
         // GET: Chat
         [Authorize]     //Authenticate user, redirect to login page if not logged in
-        public ActionResult Chatroom()
+        public ActionResult Lobby()
         {
             return View();
         }
 
-    
         [Authorize]     //Authenticate user, redirect to login page if not logged in
+        [HttpPost]      //Tell the routing engine to send POST request following onClick "Join Chatroom"
         public ActionResult Lobby(string username)
         {
             if (string.IsNullOrEmpty(username))
@@ -39,8 +39,19 @@ namespace Chatta.Controllers
                 {
                     username = container.AppendRandToUsername(username);
                 }
-                return View("Lobby", "_Layout", username);
+                return View("Chatroom", "_Layout", username);
             }
+        }
+
+        [Authorize]     //Authenticate user, redirect to login page if not logged in
+        public ActionResult Chatroom(string username)
+        {
+            if (string.IsNullOrEmpty(username))
+            {
+                return View("Lobby", "_Layout");
+            }
+            return View("Chatroom", "_Layout", username);
+
         }
     }
 }

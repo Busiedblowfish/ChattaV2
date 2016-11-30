@@ -1,32 +1,29 @@
 ﻿//Namespace in camerlCase
 var chatta = {};
 
-//Use Chatta.Models
+//Use Chatta.Models.Chat
 
 chatta.chatMessage = function (sender, message, time) {
     var self = this;
-    //self.username = sender;  for username implementation
-    self.email = sender;
+    self.username = sender;
     self.message = message;
-    if (time != null) {
+    if (time !== null) {
         self.timestamp = time;
     }
-}
+};
 
 //Connected User
-chatta.chatUser = function (authUser, userId) //client refers to authenticated user
-{
+chatta.chatUser = function (username, userId) {
     var self = this;
-    //self.username = username;
-    self.email = authUser;
+    self.username = username;
     self.userId = userId;
-}
+};
 
 // ViewModels
 chatta.chatViewModel = function () {
     var self = this;
     self.messages = ko.observableArray();
-}
+};
 
 chatta.connectedUsersViewModel = function () {
     var self = this;
@@ -36,5 +33,5 @@ chatta.connectedUsersViewModel = function () {
         self.contacts.remove(function (item) {
             return item.userId === userIdToRemove;
         });
-    }
-}
+    };
+};
