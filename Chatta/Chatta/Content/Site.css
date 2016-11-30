@@ -23,6 +23,14 @@ textarea {
     max-width: 280px;
 }
 
+/* Application Logo */ 
+.navbar-brand
+{
+    height:50px;
+    width:50px;
+    background-image:url("../Images/logo.png");
+    background-size:cover;
+}
 
 /*Chat lobby*/
 #chatlobby-form
@@ -44,7 +52,7 @@ textarea {
 label 
 {    
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 24px;
+	font-size: 20px;
     color: #265692
 }
 
@@ -120,8 +128,6 @@ button
     margin: auto;
     position:relative;
     height:20%;
-    top: 0px;
-    left: 0px;
 }
 
 .msg-box
@@ -189,8 +195,7 @@ li.user-list
 #chat-box ul
  {
 	list-style: none;
-    list-style-position: inside;
-    margin-left:0px;			
+    list-style-position: inside;	
 }
 
 #chat-box ul li 
@@ -200,9 +205,9 @@ li.user-list
 	width:100%;
 	height:100%;
 }
-.chat-property-email 
+.chat-property-username 
 {
-    display:inline-block;
+    display:block;
     float:left;
     width: 20%;
     padding:20px;    
@@ -214,23 +219,19 @@ li.user-list
     border-style: dotted;
     border-color: inherit;
     border-width: medium;
-    float:left;
     width: 70%;
     padding: 20px;    
-    /*word-wrap: break-word;*/
-    display:inline-block;
-    height: 0px;
+    word-wrap: break-word;
+    display:block;
 }
 
 .chat-property-timestamp 
 {   
     width: 10%;
-    float:left;
     position: absolute;
     text-align: center;
     font-weight:lighter;    
     padding: 20px;    
     background-color: #FF9966;
     color: black;
-    display:inline-block;
 }
