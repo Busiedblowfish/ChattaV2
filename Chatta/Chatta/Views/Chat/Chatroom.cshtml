@@ -6,7 +6,7 @@
 <!-- This is the title header for the chat hub -->
 <div id="whole-box-header">
     <div class="groupchat-header"><h4>Group Chat Messages</h4></div>
-    <div class="userbox-header"><h4>Online</h4></div>
+    <div class="userbox-header"><h4>Online Users</h4></div>
 </div>
 <!-- This is the whole chat box, split into individual divs -->
 <div id="whole-box">
@@ -15,11 +15,12 @@
             <!-- This will display the list of group chats -->
             <ul>
                 <li>
-                    <div class="chat-property-email" data-bind="text: username">
+                    <div class="chat-property-username" data-bind="text: username">
                     </div>
-                    <div class="chat-property-username" data-bind="html: message">
+                    <div class="chat-property-message" data-bind="html: message">
                     </div>
                     <div class="chat-property-timestamp" data-bind="text: timestamp.toLocaleTimeString()">
+                    <br style="clear: left;" />
                     </div>
                 </li>
             </ul>

@@ -47,8 +47,8 @@ namespace Chatta
 
             // Uncomment the following lines to enable logging in with third party login providers
             app.UseMicrosoftAccountAuthentication(
-                clientId: "",
-               clientSecret: "");
+                clientId: "3e695151-2bab-496e-b583-aa759ba57b79",
+               clientSecret: "b6TjU1kYsKzD7VEJdYvxzUg");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
@@ -60,8 +60,8 @@ namespace Chatta
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "",
-               ClientSecret = ""
+                ClientId = "803596359501-rf4dltoibh3fi4crisdiopagmmf20n7v.apps.googleusercontent.com",
+               ClientSecret = "azfLOJLluhlXyhQoVsC06Kyn"
             });
         }
     }
