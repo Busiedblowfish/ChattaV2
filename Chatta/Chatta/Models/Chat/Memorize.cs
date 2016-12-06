@@ -21,12 +21,14 @@ namespace Chatta.Models.Chat
             return instance;
         }
 
+        //Memorize the user by mapping to ICollection
         private Memorize()
         {
             connectedUsers = new List<ChatUser>();
             mappings = new Dictionary<string, string>();
         }
 
+        //Connected User template
         public IQueryable<ChatUser> Users
         {
             get {
@@ -34,17 +36,23 @@ namespace Chatta.Models.Chat
                 }
         }
 
+        //Add connected user  event handler for ChatUser Container
         public void Add(ChatUser user)
         {
             connectedUsers.Add(user);
         }
 
+        //Remove connected user event handler for ChatUser Container
         public void Remove(ChatUser user)
         {
             connectedUsers.Remove(user);
         }
 
-        #region Generate a random number and append to usernames if already taken
+        /// <summary>
+        /// Generate a random number and append to guestname if already taken
+        /// </summary>
+        /// <param name="newUser"></param>
+        /// <returns></returns>
         public string AppendRandToUsername(string newUser)
         {
             string randUsername = newUser;
@@ -60,13 +68,12 @@ namespace Chatta.Models.Chat
                     oldRandom = newRandom;
                     newRandom *= 2;
                 }
-                newUser = randUsername + "@" + random.Next(oldRandom, newRandom).ToString();
+                newUser = "@"+ randUsername + random.Next(oldRandom, newRandom).ToString();
                 counter++;
             } while (GetInstance().Users.Where(u => u.Username.Equals(newUser)).ToList().Count > 0);
 
             return newUser;
         }
-        #endregion
 
         public void AddMapping(string connectionId, string userId)
         {
@@ -77,6 +84,11 @@ namespace Chatta.Models.Chat
             }
         }
 
+        /// <summary>
+        /// Map a connection ID to its guestname
+        /// </summary>
+        /// <param name="connectionId"></param>
+        /// <returns></returns>
         public string GetUserByConnectionId(string connectionId)
         {
             string userId = null;

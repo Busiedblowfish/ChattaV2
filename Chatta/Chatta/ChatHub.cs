@@ -9,6 +9,9 @@ using System.Text.RegularExpressions;
 
 namespace Chatta
 {
+    /// <summary>
+    /// SignalR hub class which services the clients
+    /// </summary>
     public class ChatHub : Hub
     {
             /* For testing message broadcast to all connected clients
@@ -29,7 +32,7 @@ namespace Chatta
         #region IDisconnect and IConnected event handlers implementation
 
         /// <summary>
-        /// Fired when a client disconnects from the system. The Username associated with the ConnectionID gets deleted from the list of currently connected users.
+        /// Fired when a client disconnects from the system. The Guestname associated with the ConnectionID gets deleted from the list of currently connected users.
         /// </summary>
         public override Task OnDisconnected(bool stopCalled)
         {
@@ -46,7 +49,11 @@ namespace Chatta
             return base.OnDisconnected(stopCalled);
         }
 
-        //Extract Url links from chat messages using regex
+        /// <summary>
+        /// Extract Url links from chat messages using regex, display the link
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
         public string TextParser(string url)
         {
             url = Regex.Replace(url, @"((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)",

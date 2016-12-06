@@ -10,7 +10,7 @@ namespace Chatta.Controllers
     public class ChatController : Controller
     {
         private Memorize container;
-
+        //Initialize the guest container to create a pool of connected guest
         public ChatController()
         {
             container = Memorize.GetInstance();
@@ -29,7 +29,7 @@ namespace Chatta.Controllers
         {
             if (string.IsNullOrEmpty(username))
             {
-                ModelState.AddModelError("username", "Username is required");
+                ModelState.AddModelError("username", "Guestname is required");
                 return View();
             }
             else
@@ -43,7 +43,9 @@ namespace Chatta.Controllers
             }
         }
 
-        [Authorize]     //Authenticate user, redirect to login page if not logged in
+        /* Authenticate user, redirect to login page if not logged in 
+           If they haven't picked a guestname, redirected to the chatlobby view */ 
+        [Authorize]     
         public ActionResult Chatroom(string username)
         {
             if (string.IsNullOrEmpty(username))

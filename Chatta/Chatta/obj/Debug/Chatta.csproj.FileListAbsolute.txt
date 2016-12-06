@@ -84,3 +84,4 @@ C:\Users\O\Documents\GitHub\ChattaV2\Chatta\Chatta\bin\Microsoft.Owin.Security.T
 C:\Users\O\Documents\GitHub\ChattaV2\Chatta\Chatta\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\O\Documents\GitHub\ChattaV2\Chatta\Chatta\obj\Debug\Chatta.dll
 C:\Users\O\Documents\GitHub\ChattaV2\Chatta\Chatta\obj\Debug\Chatta.pdb
+C:\Users\O\Documents\GitHub\ChattaV2\Chatta\Chatta\obj\Debug\Chatta.csprojResolveAssemblyReference.cache

@@ -15,14 +15,14 @@ namespace Chatta.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Chatta: Encrypted Web Chat";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            //ViewBag.Message = "Contact Us";
 
             return View();
         }
