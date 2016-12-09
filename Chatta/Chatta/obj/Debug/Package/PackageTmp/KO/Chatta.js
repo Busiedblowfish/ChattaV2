@@ -19,12 +19,14 @@ chatta.chatUser = function (username, userId) {
     self.userId = userId;
 };
 
-// ViewModels
+// Chat ViewModel
 chatta.chatViewModel = function () {
     var self = this;
     self.messages = ko.observableArray();
 };
 
+// Connected User ViewModel
+//Remove connected user from webpage upon disconnect
 chatta.connectedUsersViewModel = function () {
     var self = this;
     self.contacts = ko.observableArray();
