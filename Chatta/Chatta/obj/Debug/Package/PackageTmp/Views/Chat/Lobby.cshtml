@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Lobby";
+}
+
+@using (Html.BeginForm("Lobby", "Chat", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+
+    <div id="chatlobby-form" class="form-control">
+        <h2 style="text-align:center">Welcome to the chatroom lobby</h2>
+        <div id="chatlobby-box">
+            <hr />
+            <label for="username">Enter a chatroom guest name</label>
+            <input type="text" id="username" class="input-group" placeholder="Type here" name="username" autofocus="autofocus" maxlength="15" required="required" />
+            <button type="submit" class="btn btn-primary btn-lg">Join Chatroom</button>
+        </div>
+    </div>
+}

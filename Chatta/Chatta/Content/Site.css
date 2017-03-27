@@ -185,27 +185,24 @@ button
     height:600px;
     border:groove;
     float:right;
-    overflow:hidden;
 }
 
 #user-box ul
 {
 	list-style: none;
-    list-style-position:inside;
     margin:0;
     padding:0;
-
+    display:block;
 }
 
 #user-box ul li
 {
-    display:block;
     text-align:center;
 	border-bottom: 2px solid #F2F2F2;
     padding:5px;
     background-color:#edd3d3;
     width:100%;
-    overflow:auto;
+    overflow-y: auto;
 }	
 
 #user-box ul li:hover 
@@ -242,14 +239,13 @@ button
 {
     display:block;
     height: inherit;
-    overflow:hidden;
+    overflow:auto;
    	border-bottom: 2px solid #808080;
 }
 
 
 .chat-property-username 
 {
-    display:block;
     float:left;
     width: 25%;
     padding:5px;    
